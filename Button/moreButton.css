@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: #1d1d1f;
+}
+
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #eee;
+}
+
+#button {
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#button a {
+    pointer-events: none;
+    transform: rotate(0) scale(1);
+    transition: cubic-bezier(.5, 0, 0, 1).58s;
+}
+
+#buttonLabel:checked~label a {
+    transform: rotate(-180deg) scale(.75);
+}
+
+#button a div {
+    height: 6px;
+    border-radius: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    box-shadow: 0 0 5px rgba(39, 128, 194, 0);
+    transition: cubic-bezier(.5, 0, 0, 1).4s;
+}
+
+#button a :nth-child(1) {
+    width: 24px;
+    margin-left: 6px;
+}
+
+#button a :nth-child(2) {
+    width: 22px;
+    margin-left: 6.5px;
+}
+
+#button a :nth-child(3) {
+    width: 28px;
+    margin-left: 2px;
+}
+
+#buttonLabel:checked~label a div {
+    background-color: rgba(39, 128, 194, 1);
+    box-shadow: 0 0 5px rgba(39, 128, 194, .3);
+}
+
+#buttonLabel:checked~label a :nth-child(1) {
+    width: 30px;
+    transform: translateY(11px) rotate(.125turn) scale(1.2);
+    margin-left: 0;
+}
+
+#buttonLabel:checked~label a :nth-child(2) {
+    width: 0;
+    /* transform: translateY(11px) rotate(.125turn) scale(1.2); */
+    background-color: rgba(39, 128, 194, 0);
+    box-shadow: 0 0 5px rgba(39, 128, 194, 0);
+    margin-left: 0;
+}
+
+#buttonLabel:checked~label a :nth-child(3) {
+    width: 30px;
+    transform: translateY(-11px) rotate(-.125turn) scale(1.2);
+    margin-left: 0;
+}
+
+#moreOptions {
+    height: auto;
+    margin-top: 50px;
+    padding: 10px 5px;
+    border-radius: 64px;
+    transform: scale(0);
+    transition: cubic-bezier(.32, 0, .19, 1).4s;
+    transform-origin: 90% -5% 0;
+}
+
+#buttonLabel:checked~div {
+    display: block;
+    border-radius: 8px;
+    background-color: rgb(245, 245, 247);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+    transform: scale(1);
+}
+
+#moreOptions li {
+    height: 20px;
+    padding: 5px;
+    margin: 5px 3px;
+    border-radius: 32px;
+    pointer-events: none;
+    transition: cubic-bezier(.32, 0, .19, 1).4s;
+}
+
+#moreOptions li:hover {
+    background-color: rgb(222, 222, 222);
+}
+
+#buttonLabel:checked~div ul li {
+    border-radius: 5px;
+    pointer-events: all;
+}
+
+#moreOptions li a {
+    height: 20px;
+    line-height: 20px;
+    /* font-size: 20px; */
+    text-align: center;
+    color: rgba(0, 0, 0, 0);
+    transition: cubic-bezier(.32, 0, .19, 1).2s;
+    pointer-events: none;
+}
+
+#buttonLabel:checked~div ul li a {
+    color: #000;
+    pointer-events: all;
+}
